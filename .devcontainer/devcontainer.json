@@ -1,8 +1,6 @@
 {
   "name": "Secure portal block 1 \u00b7 Python 3.14",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/devcontainers/python:3.14",
   "forwardPorts": [
     5000
   ],
@@ -13,7 +11,7 @@
       "protocol": "http"
     }
   },
-  "postCreateCommand": "bash scripts/bootstrap.sh",
+  // "postCreateCommand": "bash scripts/bootstrap.sh",
   "customizations": {
     "vscode": {
       "extensions": [
