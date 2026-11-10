@@ -1,4 +1,4 @@
-# Block 1: Authentication and role permissions
+# Secure Authentication, Authorisation and Session Management - Block 1: Authentication and role permissions
 
 Level 6 · Secure Authentication, Authorisation and Session Management · w/c 9 November 2026
 
