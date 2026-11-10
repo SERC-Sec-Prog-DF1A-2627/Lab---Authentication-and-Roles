@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Log in</h2>
+<p>Use a fictional lab account. Do not enter a real password.</p>
+<form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Username <input name="username" autocomplete="username" required maxlength="30"></label>
+  <label>Password <input type="password" name="password" autocomplete="current-password" required maxlength="128"></label>
+  <button type="submit">Log in</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Register a student account</h2>
+<p>Username: 3–30 characters using a-z, 0-9 or _. Password: 15–128 characters. Spaces are allowed.</p>
+<form method="post">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <label>Username <input name="username" autocomplete="username" minlength="3" maxlength="30" required></label>
+  <label>Password <input type="password" name="password" autocomplete="new-password" minlength="15" maxlength="128" required></label>
+  <button type="submit">Create student account</button>
+</form>
+{% endblock %}

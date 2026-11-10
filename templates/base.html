@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or 'Student Project Portal' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>Student Project Portal</h1>
+  <p>Fictional college data · private teaching lab</p>
+  <nav aria-label="Main navigation">
+    <a href="{{ url_for('index') }}">Home</a>
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('account') }}">My account</a>
+      {# These conditionals improve navigation. Python routes enforce access. #}
+      {% if current_user.role == 'staff' %}<a href="{{ url_for('staff_area') }}">Staff</a>{% endif %}
+      {% if current_user.role == 'admin' %}<a href="{{ url_for('admin_area') }}">Administration</a>{% endif %}
+      <form method="post" action="{{ url_for('logout') }}">
+        <!-- LOGOUT_CSRF -->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Log out</button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('login') }}">Log in</a>
+      <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+  </nav>
+</header>
+<main>
+  {% for message in get_flashed_messages() %}<p role="status">{{ message }}</p>{% endfor %}
+  {% if error %}<p role="alert">{{ error }}</p>{% endif %}
+  {# Child templates replace this block, keeping one shared page layout. #}
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {font: 1.05rem/1.55 system-ui, sans-serif; max-width: 58rem; margin: 2rem auto; padding: 0 1rem; color: #18313b; background:#fbfcfa;}
+header {border-bottom: 2px solid #16796b; padding-bottom:1rem;}
+nav {display:flex; align-items:center; gap:1rem; flex-wrap:wrap;}
+a {color:#086355;}
+label {display:block; margin:1rem 0;}
+input,textarea,button {font:inherit; padding:.45rem;}
+input,textarea {display:block; max-width:95%; width:24rem;}
+textarea {height:7rem;}
+button {cursor:pointer;}
+[role=alert] {color:#a02020;}
+td,th {padding:.5rem; text-align:left;}
